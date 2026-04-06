@@ -1,4 +1,4 @@
-# Strategy and Factory Pattern Implementation - PIM Export Service
+# Strategy and Factory Pattern Implementation - Export Service
 
 ## Project Overview
 
