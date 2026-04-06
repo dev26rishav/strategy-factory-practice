@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.practice.strategyandfactorypim.exception.ExportStrategyNotFound;
 import com.practice.strategyandfactorypim.service.ExportService;
 
 @RestController()
@@ -23,7 +24,7 @@ public class ExportController {
         try {
             String message = exportService.exportDataById(id);
             return ResponseEntity.accepted().body(message);
-        } catch (IllegalArgumentException ex) {
+        } catch (ExportStrategyNotFound ex) {
             return ResponseEntity.badRequest().body(ex.getMessage());
         }
     }

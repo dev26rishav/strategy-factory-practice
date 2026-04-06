@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.practice.strategyandfactorypim.exception.ExportStrategyNotFound;
 import com.practice.strategyandfactorypim.service.strategies.ExportStrategy;
 
 @Service
@@ -21,6 +22,6 @@ public class ExportService {
             }
         }
 
-        throw new IllegalArgumentException();
+        throw new ExportStrategyNotFound("no valid export strategy found for ID: " + id);
     }
 }
